@@ -1,10 +1,26 @@
-<div class="jumbotron">
-  <h1>Hello World!</h1>
+<div ng-app class="jumbotron" ng-controller="MainCtrl">
+  <h1>Results for {{current.game }}</h1>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
+    <div ng-init="game ='God of War'">
+        <p>
+          <label for="game ">Game:
+            <input type="text" name="game " ng-model="game ">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get Current Weather</button>
+        </p>
+      <dl>
+        <dt>Weather </dt>
+        <dd>{{current.game.title}}</dd>
+        <dd>{{current.game.score[0]}}</dd>
+        <dt>Description</dt>
+        <dd>{{current.game.short_description}}</dd>
+        <dt>Platform</dt>
+        <dd>{{current.game.Platfomrs}}</dd>
+      </dl>
+    </div>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
 </div>
 
 <div class="row marketing">
