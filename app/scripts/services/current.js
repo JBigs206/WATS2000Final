@@ -13,24 +13,32 @@
     // ...
 
     // Public API here
-    return $resource('https://videogamesrating.p.mashape.com/get.php', {}, {
+  
+    return $resource('https://videogamesrating.p.mashape.com/get.php?count=:count&game=:game', {}, {
       query: {
         method:'GET',
-        params:{
-         count : '5', 
-         game : 'God+of+War',
-          headers : { 'X-Mashape-Key' : 'uGVChipeKjmshBJQevoro6tDrmX2p14ZX1njsnQ7NbTMwk538t', 
+
+         params:{
+          count : '5', 
+          game : 'God+of+War',
+    //     //'acess_token=ACESS_TOKEN' 'https://videogamesrating.p.mashape.com/get.php',
+
+        
+         },
+         
+          headers : { 'X-Mashape-Key' : 'uGVChipeKjmshBJQevoro6tDrmX2p14ZX1njsnQ7NbTMwk538t'
                      
-                      'Accept' : 'application/json'}
-        },
+                      //'Accept' : 'application/json' 
+                    },
 
-
-        isArray:false
-       
+       isArray: true
 
       },
-
+        
+                     
+       
     }); 
      wats2000FinalApp.$inject = ['$resource', 'mashapeKey'];
 
-  });
+  }); 
+

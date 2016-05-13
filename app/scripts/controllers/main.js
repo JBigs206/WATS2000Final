@@ -11,9 +11,9 @@ angular.module('wats2000FinalApp')
    .controller('MainCtrl', function ($scope, current) {
     $scope.current = current.query();
 
-    $scope.refreshCurrent = function(){
-        $scope.current = current.query({
-            game : $scope.game 
-        });
-    };
+    // $scope.refreshCurrent = function(){
+        // $scope.current = current.query({
+            // game : $scope.game 
+        // });
+    // };
   });
