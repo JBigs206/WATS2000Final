@@ -1,5 +1,5 @@
 <div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Results for {{current[0].platforms[1] }}</h1>
+  <h1>Select Your Game</h1>
   <p class="lead">
     <div ng-init="game ='God of War'">
         <p>
@@ -8,7 +8,7 @@
           </label>
         </p>
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Get Current Weather</button>
+          <button class="btn btn-lg btn-primary" ng-click="findCities()">Find Game</button>
         </p>
       <dl ng-repeat="(key, game) in current">
         <dt>Title </dt>
@@ -21,6 +21,15 @@
       </dl>
     </div>
   </p>
+</div>
+
+<div ng-if="storage.savedCities">
+  <h2>Saved Cities</h2>
+  <ul class="saved-cities-list">
+    <li ng-repeat="city in storage.savedCities">
+      <a ng-href="/#/current/{{game.title}}" class="btn btn-lg btn-primary">{{game.title}}</a>
+    </li>
+  </ul>
 </div>
 
 <div class="row marketing">
