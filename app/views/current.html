@@ -1,1 +1,13 @@
+
+
+
 <p><button class="btn btn-sm btn-primary" ng-click="saveCity(currentWeather)">Save Game</button></p>
+
+<div ng-messages="citySaved">
+    <p class="city-saved-alert bg-success text-success" ng-message="success">
+        {{game.title}} has been saved to your list of cities.
+    </p>
+    <p class="city-saved-alert bg-warning text-warning" ng-message="duplicate">
+        {{game.title}} has already been saved to your list of cities.
+    </p>
+</div>

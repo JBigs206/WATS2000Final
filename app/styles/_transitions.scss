@@ -1,0 +1,8 @@
+div[ng-view].ng-enter {
+    -webkit-animation: bounceInLeft 0.5s;
+    animation: bounceInLeft 0.5s;
+}
+div[ng-view].ng-leave {
+    -webkit-animation: bounceOutRight 0.5s;
+    animation: bounceOutRight 0.5s;
+}
