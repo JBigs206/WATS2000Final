@@ -37,6 +37,13 @@ angular
         controller: 'CurrentCtrl',
         controllerAs: 'current'
       })
+      //added new test controler 05/24/16
+      .when('/xbox', {
+        templateUrl: 'views/xbox.html',
+        controller: 'MainCtrl',
+        controllerAs: 'xbox'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

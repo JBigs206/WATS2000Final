@@ -18,9 +18,9 @@
         <dt>Description</dt>
         <dd>{{game.short_description}}</dd>
         <dt>Platform</dt>
-        <dd>{{game.platfomrs[0]}}</dd>
-        <dd>{{game.platfomrs[1]}}</dd>
-        <dd>{{game.thumb}}</dd>
+        <dd ng-repeat="platform in game.platforms">{{platform}}</dd>
+        
+        <dd><img ng-src="{{game.thumb}}" alt="{{game.title}} thumbnail"></dd>
       </dl>
     </div>
   </p>
@@ -30,7 +30,7 @@
   <h2>Saved Games</h2>
   <ul class="saved-cities-list">
     <li ng-repeat="city in storage.savedCities">
-      <a ng-href="/#/current/{{game.title}}" class="btn btn-lg btn-primary">{{game.title}}</a>
+      <a ng-href="#/current/{{game.title}}" class="btn btn-lg btn-primary">{{game.title}}</a>
     </li>
   </ul>
 </div> 
