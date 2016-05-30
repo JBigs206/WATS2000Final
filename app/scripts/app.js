@@ -43,6 +43,16 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'xbox'
       })
+      .when('/playstation', {
+        templateUrl: 'views/playstation.html',
+        controller: 'MainCtrl',
+        controllerAs: 'playstation'
+      })
+       .when('/wii', {
+        templateUrl: 'views/wii.html',
+        controller: 'MainCtrl',
+        controllerAs: 'wii'
+      })
 
       .otherwise({
         redirectTo: '/'

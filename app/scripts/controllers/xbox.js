@@ -4,11 +4,11 @@
  * @ngdoc function
  * @name wats2000FinalApp.controller:MainCtrl
  * @description
- * # MainCtrl
+ * # MainCtrl 
  * Controller of the wats2000FinalApp
  */
 angular.module('wats2000FinalApp')
-   .controller('MainCtrl', function ($scope, current, $localStorage) {
+   .controller('MainCtrl', function ($scope, current, $localStorage) { 
     $scope.current = current.query();
     $scope.storage = $localStorage;
 
