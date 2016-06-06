@@ -3,6 +3,6 @@ div[ng-view].ng-enter {
     animation: bounceInLeft 0.5s;
 }
 div[ng-view].ng-leave {
-    -webkit-animation: bounceOutRight 0.5s;
+    -webkit-animation: bounceOutLeft 0.5s;
     animation: bounceOutRight 0.5s;
 }

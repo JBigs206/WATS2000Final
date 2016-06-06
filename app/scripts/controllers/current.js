@@ -9,18 +9,25 @@
  */
 angular.module('wats2000FinalApp')
   .controller('CurrentCtrl', function ($scope, $routeParams, current, $localStorage) {
-    $scope.saveCity = function(city){
+
+  	$scope.gameID = $routeParams.gameID;
+  	$scope.currentGame = current.query({
+        gameID: $routeParams.gameID
+    });
+
+
+    $scope.saveCity = function(game){
     var cityData = {
-        'name': game.title,
-        'id': game.thumb
+        'title': game.title
+        // 'id': game.thumb
     };
     if (!$localStorage.savedCities){
         $localStorage.savedCities = [cityData];
     } else {
-        // Check to make sure we haven't already saved the city.
+        // Check to make sure we haven't already saved the game.
         var save = true;
         for (var i=0; i < $localStorage.savedCities.length; i++){
-            if ($localStorage.savedCities[i].id === cityData.id) {
+            if ($localStorage.savedCities[i].title === cityData.title) {
                 // this is a duplicate, so don't save
                 save = false;
             }
@@ -32,7 +39,7 @@ angular.module('wats2000FinalApp')
                 'success': true
             };
         } else {
-            console.log('city already saved');
+            console.log('game already saved');
             // Add object to trigger messages
             $scope.citySaved = {
                 'duplicate': true

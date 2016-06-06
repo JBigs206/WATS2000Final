@@ -60,6 +60,7 @@ body {
 
   .btn {
     font-size: 21px;
+    font-family: 'Coda Caption';
     padding: 14px 24px;
     background-color: #FF4801;
   }
@@ -118,7 +119,7 @@ body {
 .box {
   background:#fff;
   transition:all 0.2s ease;
-  border:2px dashed #dadada;
+  
   margin-top: 10px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -127,9 +128,7 @@ body {
   min-height:340px;
 }
 
-.box:hover {
-  border:2px solid #525C7A;
-}
+
 
 .box span.box-title {
     color: #fff;
@@ -150,4 +149,73 @@ body {
 }
 .box .box-content dd, dt{
   margin: 10px;
+}
+
+.intro {
+  padding:5px;
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+  
+}
+.intro p {
+  margin: 8px;
+  text-align: left;
+  text-indent: 20px;
+}
+
+
+
+.introConsole{
+  border-radius: 15px;
+  padding:10px;
+  background-color: #FF4801;
+  color: white;
+  width: 358px;
+  display: inline-block;
+}
+h2 {
+  font-family: 'Coda Caption';
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 15.4px;
+}
+
+table, th, td {
+    border: 5px solid #00CCFF;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;    
+}
+th {
+   background-color: #00CCFF;
+    color: white;
+    
+    font-weight: bold;
+}
+
+th dt {
+  border-bottom: 1px solid white;
+  padding-bottom: 1px;
+}
+td {
+  background-color: #FF4801;
+  color: white;
+}
+
+#shownInfo td{
+  border: none;
+  background-color: #00CCFF;
+  color: white;
+}
+
+#shownInfo h2 {
+color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 7px;
+  display: inline-block;
 }

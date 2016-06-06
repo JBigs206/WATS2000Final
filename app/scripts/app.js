@@ -32,7 +32,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/current', {
+      .when('/current/:gameID', {
         templateUrl: 'views/current.html',
         controller: 'CurrentCtrl',
         controllerAs: 'current'
@@ -40,17 +40,17 @@ angular
       //added new test controler 05/24/16
       .when('/xbox', {
         templateUrl: 'views/xbox.html',
-        controller: 'MainCtrl',
+        controller: 'XboxCtrl',
         controllerAs: 'xbox'
       })
       .when('/playstation', {
         templateUrl: 'views/playstation.html',
-        controller: 'MainCtrl',
-        controllerAs: 'playstation'
+        controller: 'PlayCtrl',
+        controllerAs: 'play'
       })
        .when('/wii', {
         templateUrl: 'views/wii.html',
-        controller: 'MainCtrl',
+        controller: 'NintendoCtrl',
         controllerAs: 'wii'
       })
 

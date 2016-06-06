@@ -1,52 +1,59 @@
-<div ng-app class="jumbotron" ng-controller="MainCtrl">
-  <h1>Results for {{game.title}}</h1>
+<div ng-app class="jumbotron" ng-controller="NintendoCtrl">
+  <div class="introConsole">
+    <h2>Popular Games for Nintendo</h2>
+  </div><br><br>
   <p class="lead">
-    <div ng-init="game ='Mario'"> 
-        <p>
-          <label for="game ">Game:
-            <input type="text" name="game " ng-model="game ">
-          </label>
-        </p>
-        <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Find Game</button>
-        </p>
-      <div class="container" ng-repeat="(key, game) in current">
-  <div class="row">
-            <div class="row">
-                <div class=" text-center">
-                    <div class="box">
-                        <div class="box-content">
-                            <dl >
-                             <!-- <dt><h1>Title</h1></dt> -->
-                              <dd><h2>{{game.title}}</h2></dd>
-                              <dd><img ng-src="{{game.thumb}}" alt="{{game.title}} thumbnail"></dd>
-                              <dt>Publisher</dt>
-                              <dd>{{game.publisher}}</dd>
-                              <dt>Score</dt>
-                              <dd>{{game.score}}</dd>
-                              <dt>Description</dt>
-                              <dd>{{game.short_description}}</dd>
-                              <dt>Platform</dt>
-                              <dd ng-repeat="platform in game.platforms">{{platform}}</dd>
-                            </dl>
-                            <br />
-                            <a href="http://www.ign.com/" class="btn btn-block btn-primary">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>           
-        </div>
-  </div>
-</div>
-  
-</div>
-</p>
+    <p>
+      <label for="game ">Game:
+        <input type="text" name="game " ng-model="game " placeholder="Search More Games Here">
+      </label>
+    </p>
+    <p>
+      <button class="btn btn-lg btn-primary" ng-click="refreshWii()">Find Game</button>
+    </p>
+    <div class="container" ng-repeat="(key, game) in wii">
+      <div class="row">
+        <div class="row">
+          <div class=" text-center">
+            <div class="box">
+              <div class="box-content">
+                <dl>
+                  <table id="shownInfo" style="width:100%">
+                   <tr>
+                    <td colspan="2"><dd><h2>{{game.title}}</h2></dd></td><br>
+                  </tr>
+                  <tr> 
+                    <td colspan="2"><dd><img ng-src="{{game.thumb}}" alt="{{game.title}} thumbnail"></dd></td>
+                  </tr> 
+                </table>
+                <table style="width:100%" ng-show="gameInfo">
+                 <tr>
+                  <th><dt>Description</dt>
+                    <td><dd>{{game.short_description}}</dd></td>
+                  </tr>
+                  <tr >
+                    <th><dt>Score</dt></th>
+                    <td><dd>{{game.score}}</dd></td>
+                  </tr>
+                  <tr >
+                    <th><dt>Publisher</dt></th>
+                    <td><dd>{{game.publisher}}</dd></td>
+                  </tr>
+                  <tr >
+                    <th><dt>Platform</dt></th>
+                    <td><dd ng-repeat="platform in game.platforms">{{platform}}</dd></td>
+                  </tr>
+                </table>
 
-<div ng-if="storage.savedCities">
-  <h2>Saved Games</h2>
-  <ul class="saved-cities-list">
-    <li ng-repeat="city in storage.savedCities">
-      <a ng-href="/#/current/{{game.title}}" class="btn btn-lg btn-primary">{{game.title}}</a>
-    </li>
-  </ul>
-</div> 
+                <br>
+                <a href ng-click="gameInfo = !gameInfo" class="btn btn-block btn-primary">Learn more</a>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>           
+    </div>
+  </div>
+</p>
+</div>
+

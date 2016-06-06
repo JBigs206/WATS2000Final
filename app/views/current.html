@@ -1,13 +1,44 @@
+<div ng-app class="jumbotron" ng-controller="CurrentCtrl">
+  <h1>Results for {{currentGame.game.title}}</h1>
+  <p class="lead">
+ 
+	<div class="container">
+  		<div class="row">
+            <div class="row">
+                <div class=" text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <dl ng-repeat="game in currentGame">
+                              <dt><h1>Title</h1></dt>
+                              <dd><h2>{{game.title}}</h2></dd>
+                              <dd><img ng-src="{{game.thumb}}" alt="{{game.title}} thumbnail"></dd>
+                              <dt>Publisher</dt>
+                              <dd>{{game.publisher}}</dd>
+                              <dt>Score</dt>
+                              <dd>{{game.score}}</dd>
+                              <dt>Description</dt>
+                              <dd>{{game.short_description}}</dd>
+                              <dt>Platform</dt>
+                              <dd ng-repeat="platform in game.platforms">{{platform}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+  </div>
+
+    </p>     
+</div>
 
 
-
-<p><button class="btn btn-sm btn-primary" ng-click="saveCity(currentWeather)">Save Game</button></p>
+<p><button class="btn btn-sm btn-primary" ng-click="saveCity(currentGame)">Save Game</button></p>
 
 <div ng-messages="citySaved">
     <p class="city-saved-alert bg-success text-success" ng-message="success">
-        {{game.title}} has been saved to your list of cities.
+        {{game.title}} has been saved to your list of games.
     </p>
     <p class="city-saved-alert bg-warning text-warning" ng-message="duplicate">
-        {{game.title}} has already been saved to your list of cities.
+        {{game.title}} has already been saved to your list of games.
     </p>
 </div>
